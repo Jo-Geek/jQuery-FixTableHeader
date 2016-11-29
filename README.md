@@ -27,7 +27,8 @@ Although this is the perfect layout of a table, this plugin can work even on dif
 <li>Multiple heading tags defined</li>
 </ul>
 
-Concept is very simple: <small>this is it</small>
+<u>Concept</u>: <br/> Takes all the rows inside <b>thead</b> and <b>tfoot</b> as header and footer respectively.<br/>
+If not specified, it takes the <b>first row</b> and the <b>last row</b> as the header and footer respectiely.
 </td>
 </tr>
 </table>
