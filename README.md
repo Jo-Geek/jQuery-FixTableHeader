@@ -19,12 +19,15 @@ View a demo **<a href='#'>here</a></h4>**.
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;<br/>
 &lt;/table&gt;</font>
 </td><td width="50%" valign="top">
-Not to worry, although this is the perfect layout of a table, this plugin can work even on different layouts and misformed layouts.
+Although this is the perfect layout of a table, this plugin can work even on different layouts and improper layouts.
 <br/><br/>Not all possibilities are tested, some of the tested layouts include:
 <ul>
 <li>Ttraditional layout with no <b>tbody, thead, tfoot</b></li>
 <li>Improper use of <b>td</b> for <b>th</b> in heading</li>
+<li>Multiple heading tags defined</li>
 </ul>
+
+Concept is very simple: <small>this is it</small>
 </td>
 </tr>
 </table>
