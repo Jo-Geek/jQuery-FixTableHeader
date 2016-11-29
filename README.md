@@ -18,5 +18,6 @@ View a demo **<a href='#'>here</a></h4>**.
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&nbsp;&lt;td&gt;...&lt;/td&gt;&nbsp;......&lt;/tr&gt;<br/>
 >&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tbody&gt;<br/>
 >&lt;/table&gt;
-Although this is the perfect layout of the table, this plugin can work even on different layouts and misformed layouts too.
+
+Not to worry, although this is the perfect layout of a table, this plugin can work even on different layouts and misformed layouts.
 
