@@ -1,8 +1,4 @@
-<style>
-div#divIdealTb{
-padding:10px;background-color:#ddd;border-radius:4px;border:1px solid #aaa;
-}
-</style>
+>
 # jQuery-FixTableHeader
 _A jQuery plugin to fix header or footer row in a table on user scroll_
 
@@ -12,7 +8,7 @@ View a demo **<a href='#'>here</a></h4>**.
 
 ## An ideal html table
 
-<div id="divIdealTb">
+<div id="divIdealTb" style="padding:10px;background-color:#ddd;border-radius:4px;border:1px solid #aaa;">
 &lt;table&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;thead&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&nbsp;&lt;th&gt;...&lt;/th&gt;&nbsp;......&lt;/tr&gt;<br/>
