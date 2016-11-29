@@ -34,10 +34,10 @@ If not specified, it takes the <b>first row</b> and the <b>last row</b> as the h
 </table>
 
 ##Version 1.0
-* jQuery.fixTableHeader.js
+#### jQuery.fixTableHeader.js
 
 ##Invoking the plugin
-Eg table:
+Eg table:<br/>
 &lt;table id="tbMarks"&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;...<br/>
 &lt;/table&gt;<br/>
