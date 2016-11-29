@@ -47,8 +47,9 @@ Eg table:<br/>
 >&nbsp;&nbsp;&nbsp;&nbsp;&lt;table id="tbMarks"&gt;<br/>
 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
 >&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br/>
->&lt/div&gt;<br/>
-* invoke using the container div's ID - `$('#tbMarksContainer').fixTableHeader();`
+>&lt;/div&gt;<br/>
+
+- invoke using the container div's ID - `$('#tbMarksContainer').fixTableHeader();`
 
 ##Options
 - fixHeader : **true/false** _(default -> true)_ [fix or not to fix the header]
