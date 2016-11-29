@@ -1,0 +1,19 @@
+{
+  "name": "fix-table-header",
+  "version": "1.0",
+  "description": "A jQuery plugin to fix header or footer row in a table on user scroll",
+  "main": "jQuery.fixTableHeader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jo-Geek/jQuery-FixTableHeader"
+  },
+  "author": "Jones Vinoth Joseph <jonesvinothjoseph@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jo-Geek/jQuery-FixTableHeader/issues"
+  },
+  "homepage": "https://github.com/Jo-Geek/jQuery-FixTableHeader"
+}
