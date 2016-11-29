@@ -35,11 +35,28 @@ If not specified, it takes the <b>first row</b> and the <b>last row</b> as the h
 
 ##Version 1.0
 #### jQuery.fixTableHeader.js
+* fix header and/or footer with options
+* perfect table layout not needed, just works with few **tr** in iside a **table**
+* Supports fixing multiple rows in header/footer by using the **thead**/**tfoot** tag. Any number of rows within these tags will be fixed
+* tables with horizonal scrolling is supported
 
 ##Invoking the plugin
+The table should be wrapped inside a container `div` with `overflow:auto` and a `fixed height` if necesarry.<br/>
 Eg table:<br/>
-&lt;table id="tbMarks"&gt;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
-&lt;/table&gt;<br/>
+>&lt;div id="tbMarksContainer" style="height:400px;overflow:auto;"&gt;</br>
+>&nbsp;&nbsp;&nbsp;&nbsp;&lt;table id="tbMarks"&gt;<br/>
+>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
+>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br/>
+>&lt/div&gt;<br/>
+* invoke using the container div's ID - `$('#tbMarksContainer').fixTableHeader();`
 
-* invoke using the table's ID - `$('#tbMarks').fixTableHeader();`
+##Options
+- fixHeader : **true/false** _(default -> true)_ [fix or not to fix the header]
+- fixFooter : **true/false** _(default -> false)_ [fix or not to fix the footer]
+
+Examples: <br/>
+`$('#tbMarksContainer').fixTableHeader({fixHeader:true,fixFooter:true});`
+`$('#tbMarksContainer').fixTableHeader({fixHeader:false,fixFooter:true});`
+
+##Note
+- _A drawback:_ borders applied to the headers and footers wont be preserved while scrolling (researching, if this can be fixed).
