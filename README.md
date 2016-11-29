@@ -20,9 +20,10 @@ View a demo **<a href='#'>here</a></h4>**.
 &lt;/table&gt;</font>
 </td><td width="50%" valign="top">
 Not to worry, although this is the perfect layout of a table, this plugin can work even on different layouts and misformed layouts.
-<br/>Not all possibilities are tested, som of the tested layout include:
+<br/><br/>Not all possibilities are tested, some of the tested layouts include:
 <ul>
-<li>Ttraditional layout with no <b>tbody, thead and tfoot</b></li>
+<li>Ttraditional layout with no <b>tbody, thead, tfoot</b></li>
+<li>Improper use of <b>td</b> for <b>th</b> in heading</li>
 </ul>
 </td>
 </tr>
