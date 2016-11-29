@@ -27,8 +27,19 @@ Although this is the perfect layout of a table, this plugin can work even on dif
 <li>Multiple heading tags defined</li>
 </ul>
 
-<u>Concept</u>: <br/> Takes all the rows inside <b>thead</b> and <b>tfoot</b> as header and footer respectively.<br/>
+<em>Concept</em>: <br/> Takes all the rows inside <b>thead</b> and <b>tfoot</b> as header and footer respectively.<br/>
 If not specified, it takes the <b>first row</b> and the <b>last row</b> as the header and footer respectiely.
 </td>
 </tr>
 </table>
+
+##Version 1.0
+* jQuery.fixTableHeader.js
+
+##Invoking the plugin
+Eg table:
+&lt;table id="tbMarks"&gt;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
+&lt;/table&gt;<br/>
+
+* invoke using the table's ID - `$('#tbMarks').fixTableHeader();`
