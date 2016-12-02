@@ -45,12 +45,13 @@ If not specified, it takes the <b>first row</b> and the <b>last row</b> as the h
 ##Invoking the plugin
 The table should be wrapped inside a container `div` with `overflow:auto` and a `fixed height` if necessary.<br/>
 Eg table:<br/>
->&lt;div id="tbMarksContainer" style="height:400px;overflow:auto;"&gt;</br>
->&nbsp;&nbsp;&nbsp;&nbsp;&lt;table id="tbMarks"&gt;<br/>
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
->&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br/>
->&lt;/div&gt;<br/>
-
+```
+<div id="tbMarksContainer" style="height:400px;overflow:auto;">
+    <table id="tbMarks">
+        ...
+    </table>
+</div>
+```
 - invoke using the container div's ID - `$('#tbMarksContainer').fixTableHeader();`
 
 ##Options
