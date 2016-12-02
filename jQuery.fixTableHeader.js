@@ -1,5 +1,5 @@
 (function ($) {
-    $.fn.fixTableHeaders = function (options) {
+    $.fn.fixTableHeader = function (options) {
 
         var settings = $.extend({
             fixHeader: true,
