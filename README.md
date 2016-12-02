@@ -59,5 +59,7 @@ Examples: <br/>
 `$('#tbMarksContainer').fixTableHeader({fixHeader:true,fixFooter:true});`
 `$('#tbMarksContainer').fixTableHeader({fixHeader:false,fixFooter:true});`
 
-##Note
+##! Important
 - _A drawback:_ borders applied to the headers and footers wont be preserved while scrolling (researching, if this can be fixed).
+- It is recommended to avoid `border-top` and `border-bottom` on the `th` or `td` which is going to be the header or the footer.
+- It is important to keep a solid color or an image as background to the headers and footers to avoid any transparency while scrolling.
