@@ -8,6 +8,16 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 0px 0px 0px;
 }
 
+.hidden {
+    opacity: 0;
+    display: none;
+}
+
+code {
+    padding: 0px 4px 0px 4px;
+    background-color: #eee;
+}
+
 .banner {
     width: 100%;
     background-color: #3D7083;
@@ -48,7 +58,16 @@ h1, h2, h3, h4, h5, h6 {
         height: 30px;
     }
 
-        .banner div.right > a {
+    .banner .bottom{
+        height:30px;
+
+    }
+
+    .banner .bottom a{
+        float:right;
+    }
+
+        .banner .bottom > a {
             text-decoration: none;
             height: 100%;
             display: inline-block;
@@ -62,6 +81,16 @@ h1, h2, h3, h4, h5, h6 {
             -o-animation: blink 3s linear infinite;
             -webkit-animation: blink 3s linear infinite;
             animation: blink 3s linear infinite;
+        }
+
+        .banner .github{
+            float:right;
+        }
+
+        .banner .github img{
+            width:32px;
+            height:32px;
+            box-shadow:1px 1px 3px 1px rgba(255,255,255,0.2);
         }
 
 @-moz-keyframes blink {
@@ -197,26 +226,22 @@ td.fth-header, th.fth-header, td.fth-footer, th.fth-footer {
 
 td.fth-header, th.fth-header {
     background-color: #3D7083;
+    border-bottom: 1px solid #ddd !important;
     color: white;
 }
 
 td.fth-footer, th.fth-footer {
     background-color: #4F90A8;
+    border-top: 1px solid #ddd !important;
     color: white;
 }
 
-.tab-panel {
-    position: absolute;
-    height: 0px;
+.section {
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
-
-    .tab-panel.active {
-        height: 100%;
-    }
 
 .side-right, .side-right table {
     font-size: 14px;
@@ -234,6 +259,8 @@ h1 > small, h2 > small, h3 > small, h4 > small, h5 > small, h6 > small {
     font-size: 10pt;
 }
 
+[class*=left-] {
+}
 
 .code {
     /*background-color:#fbffe8;*/
@@ -242,8 +269,15 @@ h1 > small, h2 > small, h3 > small, h4 > small, h5 > small, h6 > small {
     max-height: 150px;
     overflow: auto;
     white-space: nowrap;
-    font-family: Consolas;
 }
+
+    .code.min {
+        max-height: 120px;
+    }
+
+    .code * {
+        font-family: Consolas;
+    }
 
     .code > .header {
         position: absolute;

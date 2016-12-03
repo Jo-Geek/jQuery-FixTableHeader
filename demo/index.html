@@ -1,5 +1,9 @@
 <html>
 <head>
+
+    <!-- HTML for code syntax highliting generated using hilite.me - http://hilite.me/ -->
+
+
     <title>fixTableHeader Plugin</title>
 
     <!-- jQuery  -->
@@ -25,6 +29,21 @@
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
             $('#tableContainer').fixTableHeader();
+            $('#tableContainer1').fixTableHeader({ fixHeader: false, fixFooter: true });
+            $('#tableContainer4').fixTableHeader({ fixHeader: true, fixFooter: true });
+            $('#tableContainer2').fixTableHeader({ fixHeader: true, fixFooter: true });
+            $('#tableContainer5').fixTableHeader({ fixHeader: true, fixFooter: true });
+            $('#tableContainer3').fixTableHeader();
+            $('#tableContainer6').fixTableHeader();
+
+            $('.tab-toggle').click(function () {
+                $('.section').each(function () {
+                    $(this).addClass(" hidden");
+                })
+
+                $('#left-' + $(this).attr('data-target') + '').removeClass("hidden");
+                $('#right-' + $(this).attr('data-target') + '').removeClass("hidden");
+            })
         })
 
         function toggleProfile() {
@@ -40,9 +59,10 @@
 
 <body>
     <div class="banner">
+        <a  href="https://github.com/Jo-Geek/jQuery-FixTableHeader" target="_blank" class="github" data-toggle="tooltip" data-placement="left" title="Project on Github"><img src="res/github.png" /></a>
         <h1>jQuery-fixTableHeader</h1>
         <p><em>A jQuery plugin to fix header or footer in a table</em></p>
-        <div class="right"><a href="javascript:void(0);" onclick="toggleProfile();">@Jo-Geek</a></div>
+        <div class="bottom">Select a type and start scrolling..!<a href="javascript:void(0);" onclick="toggleProfile();">@Jo-Geek</a></div>
     </div>
     <div class="profile center" id="profile">
         <img src="res/me.jpg" />
@@ -52,25 +72,35 @@
         <div class="clear-10"></div>
         <div class="clear-10"></div>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https:jvjoseph.blogspot.com/" title="My Blog">
-            <img src="res/blogger.png" /></a>
+            <img src="res/blogger.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://stackoverflow.com/users/4084003/" title="Stack Overflow">
-            <img src="res/stackoverflow.png" /></a>
+            <img src="res/stackoverflow.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://in.linkedin.com/in/jonesvinothjoseph" title="Linkedin">
-            <img src="res/linkedin.ico" /></a>
+            <img src="res/linkedin.ico" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://codepen.io/jo_Geek/" title="CodePen">
-            <img src="res/codepen.png" /></a>
+            <img src="res/codepen.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://github.com/Jo-Geek/" title="Github">
-            <img src="res/github.png" /></a>
+            <img src="res/github.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="mailto:jonesvinothjoseph@hotmail.com" title="Email">
-            <img src="res/mail.png" /></a>
+            <img src="res/mail.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="tel:+917045477607" title="Phone">
-            <img src="res/tel.png" /></a>
+            <img src="res/tel.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://facebook.com/jones.j.joe/" title="Facebook">
-            <img src="res/fb.png" /></a>
+            <img src="res/fb.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://twitter.com/jodegeek" title="Twitter">
-            <img src="res/twitter.png" /></a>
+            <img src="res/twitter.png" />
+        </a>
         <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://plus.google.com/+JonesJosephjvj" title="Google plus">
-            <img src="res/gplus.png" /></a>
+            <img src="res/gplus.png" />
+        </a>
     </div>
     <div class="container">
         <div class="row">
@@ -78,14 +108,18 @@
                 <a class="tab-toggle" data-target="fixedHeader" href="javascript:void(0)">Fixed header</a>
                 <a class="tab-toggle" data-target="fixedFooter" href="javascript:void(0)">Fixed footer</a>
                 <a class="tab-toggle" data-target="headerFooter" href="javascript:void(0)">Header and footer</a>
-                <a class="tab-toggle" data-target="MultipleHeader" href="javascript:void(0)">Multiple Header</a>
-                <a class="tab-toggle" data-target="MultipleFooter" href="javascript:void(0)">Without <em>grouping</em></a>
+                <a class="tab-toggle" data-target="multipleHeader" href="javascript:void(0)">Multiple Header</a>
+                <a class="tab-toggle" data-target="multipleFooter" href="javascript:void(0)">Multiple Footer</a>
+                <a class="tab-toggle" data-target="withoutGroup" href="javascript:void(0)">Without <em>grouping</em></a>
+                <a class="tab-toggle" data-target="responsive" href="javascript:void(0)">Responsive tables</a>
+                <a href="https://github.com/Jo-Geek/jQuery-FixTableHeader" target="_blank">Github</a>
             </div>
             <div class="col-10 side-right">
 
                 <div class="row">
                     <div class="col-6">
-                        <div id="fixedHeader-left">
+
+                        <div id="left-fixedHeader" class="section">
                             <h3>Fixed header<small> (This is the default mode, keeps header row fixed)</small></h3>
                             <div class="clear-10"></div>
                             Example on the right shows a demo of a single row fixed as header.
@@ -120,11 +154,10 @@
                             <div class="clear-5"></div>
                             <div class="code">
                                 <div class="header">CSS</div>
-                                <!-- HTML generated using hilite.me -->
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header, <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header, </div><div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
                                 <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;  </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
                                 <div>}                                                                                                                                                                                      </div>
                                 <div></div>
                                 <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
@@ -137,212 +170,2346 @@
                                 <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
                                 <div>: white;                                                                                                                                               </div>
                                 <div>
-                                    }</div>
-
-                             
+                                    }
                                 </div>
+
+
+                            </div>
 
                             <div class="clear-5"></div>
                             <div class="code">
                                 <div class="header">jQuery</div>
+
                                 <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader();</div>
                             </div>
-                            </div>
                         </div>
-                        <div class="col-6">
 
-                            <div id="fixedHeader-right" class="tab-panel active">
-                                <div id="tableContainer" class="container-tb">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th style="height: 15.0pt; width: 96pt">Subject</th>
-                                                <th style="width: 95pt">Sem1</th>
-                                                <th style="width: 96pt">Sem2</th>
-                                                <th style="width: 67pt">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <td>Total</td>
-                                                <td class="right">1243</td>
-                                                <td class="right">1143</td>
-                                                <td class="right">2386</td>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                            <tr>
-                                                <td>Physics-1</td>
-                                                <td class="right">67</td>
-                                                <td class="right">78</td>
-                                                <td class="right">145</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-2</td>
-                                                <td class="right">76</td>
-                                                <td class="right">56</td>
-                                                <td class="right">132</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-3</td>
-                                                <td class="right">56</td>
-                                                <td class="right">67</td>
-                                                <td class="right">123</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-4</td>
-                                                <td class="right">92</td>
-                                                <td class="right">34</td>
-                                                <td class="right">126</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-5</td>
-                                                <td class="right">76</td>
-                                                <td class="right">35</td>
-                                                <td class="right">111</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-6</td>
-                                                <td class="right">43</td>
-                                                <td class="right">65</td>
-                                                <td class="right">108</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-7</td>
-                                                <td class="right">43</td>
-                                                <td class="right">65</td>
-                                                <td class="right">108</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-8</td>
-                                                <td class="right">43</td>
-                                                <td class="right">65</td>
-                                                <td class="right">108</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Physics-9</td>
-                                                <td class="right">43</td>
-                                                <td class="right">65</td>
-                                                <td class="right">108</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-1</td>
-                                                <td class="right">64</td>
-                                                <td class="right">47</td>
-                                                <td class="right">111</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-2</td>
-                                                <td class="right">98</td>
-                                                <td class="right">79</td>
-                                                <td class="right">177</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-3</td>
-                                                <td class="right">78</td>
-                                                <td class="right">67</td>
-                                                <td class="right">145</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-4</td>
-                                                <td class="right">67</td>
-                                                <td class="right">54</td>
-                                                <td class="right">121</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-5</td>
-                                                <td class="right">86</td>
-                                                <td class="right">98</td>
-                                                <td class="right">184</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-6</td>
-                                                <td class="right">79</td>
-                                                <td class="right">54</td>
-                                                <td class="right">133</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-7</td>
-                                                <td class="right">79</td>
-                                                <td class="right">54</td>
-                                                <td class="right">133</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-8</td>
-                                                <td class="right">79</td>
-                                                <td class="right">54</td>
-                                                <td class="right">133</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Maths-9</td>
-                                                <td class="right">79</td>
-                                                <td class="right">54</td>
-                                                <td class="right">133</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-1</td>
-                                                <td class="right">65</td>
-                                                <td class="right">62</td>
-                                                <td class="right">127</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-2</td>
-                                                <td class="right">67</td>
-                                                <td class="right">86</td>
-                                                <td class="right">153</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-3</td>
-                                                <td class="right">59</td>
-                                                <td class="right">46</td>
-                                                <td class="right">105</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-4</td>
-                                                <td class="right">58</td>
-                                                <td class="right">85</td>
-                                                <td class="right">143</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-5</td>
-                                                <td class="right">74</td>
-                                                <td class="right">34</td>
-                                                <td class="right">108</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-6</td>
-                                                <td class="right">38</td>
-                                                <td class="right">96</td>
-                                                <td class="right">134</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-7</td>
-                                                <td class="right">38</td>
-                                                <td class="right">96</td>
-                                                <td class="right">134</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-8</td>
-                                                <td class="right">38</td>
-                                                <td class="right">96</td>
-                                                <td class="right">134</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Chemistry-9</td>
-                                                <td class="right">38</td>
-                                                <td class="right">96</td>
-                                                <td class="right">134</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+
+
+                        <div id="left-fixedFooter" class="hidden section ">
+                            <h3>Fixed footer<small> (Optional, keeps the footer row fixed)</small></h3>
+                            <div class="clear-10"></div>
+                            Example on the right shows a demo of a single row fixed as footer.
+
+                            <div class="clear-10"></div>
+                            <div class="code min">
+
+                                <div class="header">
+                                    HTML
                                 </div>
 
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+
+                            </div>
+                            <div class="clear-5"></div>
+                            <div class="code min">
+                                <div class="header">CSS</div>
+
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
+                                <div>: white;                                                                                                                                               </div>
+                                <div>
+                                    }
+                                </div>
+
+
+                            </div>
+
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">jQuery</div>
+
+                                <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader({ fixHeader:<span style="color: #0000FF">false</span>,fixFooter:<span style="color: #0000FF">true</span> });</div>
                             </div>
                         </div>
+
+
+
+
+                        <div id="left-headerFooter" class="hidden section ">
+                            <h3>Fixed header and footer<small> (Optional, keeps both the header and footer row fixed)</small></h3>
+                            <div class="clear-10"></div>
+                            Example on the right shows a demo of bpth header and footer fixed.
+
+                            <div class="clear-10"></div>
+                            <div class="code min">
+
+                                <div class="header">
+                                    HTML
+                                </div>
+
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+
+                            </div>
+                            <div class="clear-5"></div>
+                            <div class="code min">
+                                <div class="header">CSS</div>
+
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
+                                <div>: white;                                                                                                                                               </div>
+                                <div>
+                                    }
+                                </div>
+
+
+                            </div>
+
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">jQuery</div>
+
+                                <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader({ fixHeader:<span style="color: #0000FF">true</span>,fixFooter:<span style="color: #0000FF">true</span> });</div>
+                            </div>
+                        </div>
+
+
+
+                        <div id="left-multipleHeader" class="hidden section ">
+                            <h3>Multiple headers<small> (Define more than a row as fixed headers)</small></h3>
+                            <div class="clear-10"></div>
+                            Example on the right shows a demo of multiple headers fixed.<br />
+                            Note: <b>All the rows as header should be inside <em><code>thead</code></em> tag</b>
+
+                            <div class="clear-10"></div>
+                            <div class="code min">
+
+                                <div class="header">
+                                    HTML
+                                </div>
+
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+
+                            </div>
+                            <div class="clear-5"></div>
+                            <div class="code min">
+                                <div class="header">CSS</div>
+
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
+                                <div>: white;                                                                                                                                               </div>
+                                <div>
+                                    }
+                                </div>
+
+
+                            </div>
+
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">jQuery</div>
+
+                                <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader();</div>
+                            </div>
+                        </div>
+
+
+                        <div id="left-multipleFooter" class="hidden section ">
+                            <h3>Multiple footers<small> (Define more than a row as fixed footers)</small></h3>
+                            <div class="clear-10"></div>
+                            Example on the right shows a demo of multiple footers fixed.<br />
+                            Note: <b>All rows as footer should be inside <em><code>tfoot</code></em> tag</b>
+
+                            <div class="clear-10"></div>
+                            <div class="code min">
+
+                                <div class="header">
+                                    HTML
+                                </div>
+
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+
+                            </div>
+                            <div class="clear-5"></div>
+                            <div class="code min">
+                                <div class="header">CSS</div>
+
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
+                                <div>: white;                                                                                                                                               </div>
+                                <div>
+                                    }
+                                </div>
+
+
+                            </div>
+
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">jQuery</div>
+
+                                <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader({ fixHeader:<span style="color: #0000FF">false</span>,fixFooter:<span style="color: #0000FF">true</span> });</div>
+                            </div>
+                        </div>
+
+
+                        <div id="left-withoutGroup" class="hidden section ">
+                            <h3>Without grouing <small>(Without the <code>thead</code>, <code>tbody</code>, and <code>tfoot</code> tags.)</small></h3>
+                            <div class="clear-10"></div>
+                            Example on the right shows a demo of headers and footers fixed.<br />
+
+                            <div class="clear-10"></div>
+                            <div class="code min">
+
+                                <div class="header">
+                                    HTML
+                                </div>
+
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+
+                            </div>
+                            <div class="clear-5"></div>
+                            <div class="code min">
+                                <div class="header">CSS</div>
+
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
+                                <div>: white;                                                                                                                                               </div>
+                                <div>
+                                    }
+                                </div>
+
+
+                            </div>
+
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">jQuery</div>
+
+                                <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader({ fixHeader:<span style="color: #0000FF">true</span>,fixFooter:<span style="color: #0000FF">true</span> });</div>
+                            </div>
+                        </div>
+
+
+                        <div id="left-responsive" class="hidden section ">
+                            <h3>Responive tables <small>(Supports responsive tables with horizontal scroll)</small></h3>
+                            <div class="clear-10"></div>
+                            Example on the right shows a demo of headers and footers fixed on responsive table.<br />
+
+                            <div class="clear-10"></div>
+                            <div class="code min">
+
+                                <div class="header">
+                                    HTML
+                                </div>
+
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+
+                            </div>
+                            <div class="clear-5"></div>
+                            <div class="code min">
+                                <div class="header">CSS</div>
+
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
+                                <div>: white;                                                                                                                                               </div>
+                                <div>
+                                    }
+                                </div>
+
+
+                            </div>
+
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">jQuery</div>
+
+                                <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader();</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+
+                        <div id="right-fixedHeader" class="section">
+                            <div id="tableContainer" class="container-tb">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                            <th style="width: 95pt">Sem1</th>
+                                            <th style="width: 96pt">Sem2</th>
+                                            <th style="width: 67pt">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td class="right">1243</td>
+                                            <td class="right">1143</td>
+                                            <td class="right">2386</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Physics-1</td>
+                                            <td class="right">67</td>
+                                            <td class="right">78</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-2</td>
+                                            <td class="right">76</td>
+                                            <td class="right">56</td>
+                                            <td class="right">132</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-3</td>
+                                            <td class="right">56</td>
+                                            <td class="right">67</td>
+                                            <td class="right">123</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-4</td>
+                                            <td class="right">92</td>
+                                            <td class="right">34</td>
+                                            <td class="right">126</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-5</td>
+                                            <td class="right">76</td>
+                                            <td class="right">35</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-6</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-7</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-8</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-9</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-1</td>
+                                            <td class="right">64</td>
+                                            <td class="right">47</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-2</td>
+                                            <td class="right">98</td>
+                                            <td class="right">79</td>
+                                            <td class="right">177</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-3</td>
+                                            <td class="right">78</td>
+                                            <td class="right">67</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-4</td>
+                                            <td class="right">67</td>
+                                            <td class="right">54</td>
+                                            <td class="right">121</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-5</td>
+                                            <td class="right">86</td>
+                                            <td class="right">98</td>
+                                            <td class="right">184</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-6</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-7</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-8</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-9</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-1</td>
+                                            <td class="right">65</td>
+                                            <td class="right">62</td>
+                                            <td class="right">127</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-2</td>
+                                            <td class="right">67</td>
+                                            <td class="right">86</td>
+                                            <td class="right">153</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-3</td>
+                                            <td class="right">59</td>
+                                            <td class="right">46</td>
+                                            <td class="right">105</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-4</td>
+                                            <td class="right">58</td>
+                                            <td class="right">85</td>
+                                            <td class="right">143</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-5</td>
+                                            <td class="right">74</td>
+                                            <td class="right">34</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-1</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-2</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-3</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-4</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-5</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div id="right-fixedFooter" class=" hidden section">
+                            <div id="tableContainer1" class="container-tb">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                            <th style="width: 95pt">Sem1</th>
+                                            <th style="width: 96pt">Sem2</th>
+                                            <th style="width: 67pt">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td class="right">1243</td>
+                                            <td class="right">1143</td>
+                                            <td class="right">2386</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Physics-1</td>
+                                            <td class="right">67</td>
+                                            <td class="right">78</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-2</td>
+                                            <td class="right">76</td>
+                                            <td class="right">56</td>
+                                            <td class="right">132</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-3</td>
+                                            <td class="right">56</td>
+                                            <td class="right">67</td>
+                                            <td class="right">123</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-4</td>
+                                            <td class="right">92</td>
+                                            <td class="right">34</td>
+                                            <td class="right">126</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-5</td>
+                                            <td class="right">76</td>
+                                            <td class="right">35</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-6</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-7</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-8</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-9</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-1</td>
+                                            <td class="right">64</td>
+                                            <td class="right">47</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-2</td>
+                                            <td class="right">98</td>
+                                            <td class="right">79</td>
+                                            <td class="right">177</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-3</td>
+                                            <td class="right">78</td>
+                                            <td class="right">67</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-4</td>
+                                            <td class="right">67</td>
+                                            <td class="right">54</td>
+                                            <td class="right">121</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-5</td>
+                                            <td class="right">86</td>
+                                            <td class="right">98</td>
+                                            <td class="right">184</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-6</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-7</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-8</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-9</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-1</td>
+                                            <td class="right">65</td>
+                                            <td class="right">62</td>
+                                            <td class="right">127</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-2</td>
+                                            <td class="right">67</td>
+                                            <td class="right">86</td>
+                                            <td class="right">153</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-3</td>
+                                            <td class="right">59</td>
+                                            <td class="right">46</td>
+                                            <td class="right">105</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-4</td>
+                                            <td class="right">58</td>
+                                            <td class="right">85</td>
+                                            <td class="right">143</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-5</td>
+                                            <td class="right">74</td>
+                                            <td class="right">34</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-1</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-2</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-3</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-4</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-5</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="right-headerFooter" class=" hidden section">
+                            <div id="tableContainer2" class="container-tb">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                            <th style="width: 95pt">Sem1</th>
+                                            <th style="width: 96pt">Sem2</th>
+                                            <th style="width: 67pt">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td class="right">1243</td>
+                                            <td class="right">1143</td>
+                                            <td class="right">2386</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Physics-1</td>
+                                            <td class="right">67</td>
+                                            <td class="right">78</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-2</td>
+                                            <td class="right">76</td>
+                                            <td class="right">56</td>
+                                            <td class="right">132</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-3</td>
+                                            <td class="right">56</td>
+                                            <td class="right">67</td>
+                                            <td class="right">123</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-4</td>
+                                            <td class="right">92</td>
+                                            <td class="right">34</td>
+                                            <td class="right">126</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-5</td>
+                                            <td class="right">76</td>
+                                            <td class="right">35</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-6</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-7</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-8</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-9</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-1</td>
+                                            <td class="right">64</td>
+                                            <td class="right">47</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-2</td>
+                                            <td class="right">98</td>
+                                            <td class="right">79</td>
+                                            <td class="right">177</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-3</td>
+                                            <td class="right">78</td>
+                                            <td class="right">67</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-4</td>
+                                            <td class="right">67</td>
+                                            <td class="right">54</td>
+                                            <td class="right">121</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-5</td>
+                                            <td class="right">86</td>
+                                            <td class="right">98</td>
+                                            <td class="right">184</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-6</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-7</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-8</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-9</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-1</td>
+                                            <td class="right">65</td>
+                                            <td class="right">62</td>
+                                            <td class="right">127</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-2</td>
+                                            <td class="right">67</td>
+                                            <td class="right">86</td>
+                                            <td class="right">153</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-3</td>
+                                            <td class="right">59</td>
+                                            <td class="right">46</td>
+                                            <td class="right">105</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-4</td>
+                                            <td class="right">58</td>
+                                            <td class="right">85</td>
+                                            <td class="right">143</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-5</td>
+                                            <td class="right">74</td>
+                                            <td class="right">34</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-1</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-2</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-3</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-4</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-5</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="right-multipleHeader" class=" hidden section">
+                            <div id="tableContainer3" class="container-tb">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name:</th>
+                                            <th>John</th>
+                                            <th>Roll</th>
+                                            <th>12345</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                            <th style="width: 95pt">Sem1</th>
+                                            <th style="width: 96pt">Sem2</th>
+                                            <th style="width: 67pt">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td class="right">1243</td>
+                                            <td class="right">1143</td>
+                                            <td class="right">2386</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Physics-1</td>
+                                            <td class="right">67</td>
+                                            <td class="right">78</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-2</td>
+                                            <td class="right">76</td>
+                                            <td class="right">56</td>
+                                            <td class="right">132</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-3</td>
+                                            <td class="right">56</td>
+                                            <td class="right">67</td>
+                                            <td class="right">123</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-4</td>
+                                            <td class="right">92</td>
+                                            <td class="right">34</td>
+                                            <td class="right">126</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-5</td>
+                                            <td class="right">76</td>
+                                            <td class="right">35</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-6</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-7</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-8</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-9</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-1</td>
+                                            <td class="right">64</td>
+                                            <td class="right">47</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-2</td>
+                                            <td class="right">98</td>
+                                            <td class="right">79</td>
+                                            <td class="right">177</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-3</td>
+                                            <td class="right">78</td>
+                                            <td class="right">67</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-4</td>
+                                            <td class="right">67</td>
+                                            <td class="right">54</td>
+                                            <td class="right">121</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-5</td>
+                                            <td class="right">86</td>
+                                            <td class="right">98</td>
+                                            <td class="right">184</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-6</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-7</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-8</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-9</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-1</td>
+                                            <td class="right">65</td>
+                                            <td class="right">62</td>
+                                            <td class="right">127</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-2</td>
+                                            <td class="right">67</td>
+                                            <td class="right">86</td>
+                                            <td class="right">153</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-3</td>
+                                            <td class="right">59</td>
+                                            <td class="right">46</td>
+                                            <td class="right">105</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-4</td>
+                                            <td class="right">58</td>
+                                            <td class="right">85</td>
+                                            <td class="right">143</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-5</td>
+                                            <td class="right">74</td>
+                                            <td class="right">34</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-1</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-2</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-3</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-4</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-5</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="right-multipleFooter" class=" hidden section">
+                            <div id="tableContainer4" class="container-tb">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                            <th style="width: 95pt">Sem1</th>
+                                            <th style="width: 96pt">Sem2</th>
+                                            <th style="width: 67pt">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td class="right">1243</td>
+                                            <td class="right">1143</td>
+                                            <td class="right">2386</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cumulative</td>
+                                            <td class="right">1243</td>
+                                            <td class="right">2386</td>
+                                            <td class="right">4772</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Physics-1</td>
+                                            <td class="right">67</td>
+                                            <td class="right">78</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-2</td>
+                                            <td class="right">76</td>
+                                            <td class="right">56</td>
+                                            <td class="right">132</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-3</td>
+                                            <td class="right">56</td>
+                                            <td class="right">67</td>
+                                            <td class="right">123</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-4</td>
+                                            <td class="right">92</td>
+                                            <td class="right">34</td>
+                                            <td class="right">126</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-5</td>
+                                            <td class="right">76</td>
+                                            <td class="right">35</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-6</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-7</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-8</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Physics-9</td>
+                                            <td class="right">43</td>
+                                            <td class="right">65</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-1</td>
+                                            <td class="right">64</td>
+                                            <td class="right">47</td>
+                                            <td class="right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-2</td>
+                                            <td class="right">98</td>
+                                            <td class="right">79</td>
+                                            <td class="right">177</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-3</td>
+                                            <td class="right">78</td>
+                                            <td class="right">67</td>
+                                            <td class="right">145</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-4</td>
+                                            <td class="right">67</td>
+                                            <td class="right">54</td>
+                                            <td class="right">121</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-5</td>
+                                            <td class="right">86</td>
+                                            <td class="right">98</td>
+                                            <td class="right">184</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-6</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-7</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-8</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths-9</td>
+                                            <td class="right">79</td>
+                                            <td class="right">54</td>
+                                            <td class="right">133</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-1</td>
+                                            <td class="right">65</td>
+                                            <td class="right">62</td>
+                                            <td class="right">127</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-2</td>
+                                            <td class="right">67</td>
+                                            <td class="right">86</td>
+                                            <td class="right">153</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-3</td>
+                                            <td class="right">59</td>
+                                            <td class="right">46</td>
+                                            <td class="right">105</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-4</td>
+                                            <td class="right">58</td>
+                                            <td class="right">85</td>
+                                            <td class="right">143</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-5</td>
+                                            <td class="right">74</td>
+                                            <td class="right">34</td>
+                                            <td class="right">108</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chemistry-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-1</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-2</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-3</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-4</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-5</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-6</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-7</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-8</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Computer-9</td>
+                                            <td class="right">38</td>
+                                            <td class="right">96</td>
+                                            <td class="right">134</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div id="right-withoutGroup" class=" hidden section">
+                            <div id="tableContainer5" class="container-tb">
+                                <table>
+
+                                    <tr>
+                                        <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                        <th style="width: 95pt">Sem1</th>
+                                        <th style="width: 96pt">Sem2</th>
+                                        <th style="width: 67pt">Total</th>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td>Physics-1</td>
+                                        <td class="right">67</td>
+                                        <td class="right">78</td>
+                                        <td class="right">145</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-2</td>
+                                        <td class="right">76</td>
+                                        <td class="right">56</td>
+                                        <td class="right">132</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-3</td>
+                                        <td class="right">56</td>
+                                        <td class="right">67</td>
+                                        <td class="right">123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-4</td>
+                                        <td class="right">92</td>
+                                        <td class="right">34</td>
+                                        <td class="right">126</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-5</td>
+                                        <td class="right">76</td>
+                                        <td class="right">35</td>
+                                        <td class="right">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-6</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-7</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-8</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-9</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-1</td>
+                                        <td class="right">64</td>
+                                        <td class="right">47</td>
+                                        <td class="right">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-2</td>
+                                        <td class="right">98</td>
+                                        <td class="right">79</td>
+                                        <td class="right">177</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-3</td>
+                                        <td class="right">78</td>
+                                        <td class="right">67</td>
+                                        <td class="right">145</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-4</td>
+                                        <td class="right">67</td>
+                                        <td class="right">54</td>
+                                        <td class="right">121</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-5</td>
+                                        <td class="right">86</td>
+                                        <td class="right">98</td>
+                                        <td class="right">184</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-6</td>
+                                        <td class="right">79</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-7</td>
+                                        <td class="right">79</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-8</td>
+                                        <td class="right">79</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-9</td>
+                                        <td class="right">79</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-1</td>
+                                        <td class="right">65</td>
+                                        <td class="right">62</td>
+                                        <td class="right">127</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-2</td>
+                                        <td class="right">67</td>
+                                        <td class="right">86</td>
+                                        <td class="right">153</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-3</td>
+                                        <td class="right">59</td>
+                                        <td class="right">46</td>
+                                        <td class="right">105</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-4</td>
+                                        <td class="right">58</td>
+                                        <td class="right">85</td>
+                                        <td class="right">143</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-5</td>
+                                        <td class="right">74</td>
+                                        <td class="right">34</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-6</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-7</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-8</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-9</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-1</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-2</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-3</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-4</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-5</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-6</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-7</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-8</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-9</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td class="right">1243</td>
+                                        <td class="right">1143</td>
+                                        <td class="right">2386</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cumulative</td>
+                                        <td class="right">1243</td>
+                                        <td class="right">2386</td>
+                                        <td class="right">4772</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div id="right-responsive" class=" hidden section">
+                            <div id="tableContainer6" class="container-tb">
+                                <table>
+
+                                    <tr>
+                                        <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                        <th style="width: 95pt">Sem1</th>
+                                        <th style="width: 96pt">Sem2</th>
+                                        <th style="width: 96pt">Sem3</th>
+                                        <th style="width: 96pt">Sem4</th>
+                                        <th style="width: 96pt">Sem5</th>
+                                        <th style="width: 96pt">Sem6</th>
+                                        <th style="width: 96pt">Sem7</th>
+                                        <th style="width: 67pt">Total</th>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td>Physics-1</td>
+                                        <td class="right">67</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">145</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-2</td>
+                                        <td class="right">76</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">78</td>
+                                        <td class="right">56</td>
+                                        <td class="right">132</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-3</td>
+                                        <td class="right">56</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-4</td>
+                                        <td class="right">92</td>
+                                        <td class="right">34</td>
+                                        <td class="right">34</td>
+                                        <td class="right">34</td>
+                                        <td class="right">34</td>
+                                        <td class="right">34</td>
+                                        <td class="right">34</td>
+                                        <td class="right">126</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-5</td>
+                                        <td class="right">76</td>
+                                        <td class="right">35</td>
+                                        <td class="right">35</td>
+                                        <td class="right">35</td>
+                                        <td class="right">35</td>
+                                        <td class="right">35</td>
+                                        <td class="right">35</td>
+                                        <td class="right">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-6</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">65</td>
+                                        <td class="right">65</td>
+                                        <td class="right">65</td>
+                                        <td class="right">65</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-7</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-8</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Physics-9</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">65</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-1</td>
+                                        <td class="right">64</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">47</td>
+                                        <td class="right">111</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-2</td>
+                                        <td class="right">98</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">79</td>
+                                        <td class="right">177</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-3</td>
+                                        <td class="right">78</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">67</td>
+                                        <td class="right">145</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-4</td>
+                                        <td class="right">67</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">54</td>
+                                        <td class="right">121</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-5</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">86</td>
+                                        <td class="right">98</td>
+                                        <td class="right">184</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-6</td>
+                                        <td class="right">79</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-7</td>
+                                        <td class="right">79</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-8</td>
+                                        <td class="right">79</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">43</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maths-9</td>
+                                        <td class="right">79</td>
+                                        <td class="right">54</td>
+                                        <td class="right">54</td>
+                                        <td class="right">54</td>
+                                        <td class="right">54</td>
+                                        <td class="right">54</td>
+                                        <td class="right">54</td>
+                                        <td class="right">133</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-1</td>
+                                        <td class="right">65</td>
+                                        <td class="right">62</td>
+                                        <td class="right">62</td>
+                                        <td class="right">62</td>
+                                        <td class="right">62</td>
+                                        <td class="right">62</td>
+                                        <td class="right">62</td>
+                                        <td class="right">127</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-2</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">67</td>
+                                        <td class="right">86</td>
+                                        <td class="right">153</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-3</td>
+                                        <td class="right">59</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">105</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-4</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">58</td>
+                                        <td class="right">85</td>
+                                        <td class="right">143</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-5</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">74</td>
+                                        <td class="right">34</td>
+                                        <td class="right">108</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-6</td>
+                                        <td class="right">38</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-7</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-8</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+                                        <td class="right">46</td>
+
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chemistry-9</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-1</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-2</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-3</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-4</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-5</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-6</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-7</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-8</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Computer-9</td>
+                                        <td class="right">38</td>
+                                        <td class="right">38</td>
+                                        <td class="right">38</td>
+                                        <td class="right">38</td>
+                                        <td class="right">38</td>
+                                        <td class="right">38</td>
+                                        <td class="right">96</td>
+                                        <td class="right">134</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td class="right">1243</td>
+                                        <td class="right">1143</td>
+                                        <td class="right">1143</td>
+                                        <td class="right">1143</td>
+                                        <td class="right">1143</td>
+                                        <td class="right">1143</td>
+                                        <td class="right">1143</td>
+                                        <td class="right">2386</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
