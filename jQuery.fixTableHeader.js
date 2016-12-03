@@ -56,6 +56,14 @@
             containerHeight = container.height();
         }
 
+        xHeaders.each(function () {
+            $(this).addClass(' fth-header');
+        });
+
+        xFooters.each(function () {
+            $(this).addClass(' fth-footer');
+        })
+
         this.scroll(function () {
             if (settings.fixHeader) {
                 xHeaders.each(function () {
