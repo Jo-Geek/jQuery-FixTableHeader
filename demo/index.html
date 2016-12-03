@@ -1,85 +1,350 @@
 <html>
-
 <head>
     <title>fixTableHeader Plugin</title>
+
+    <!-- jQuery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+    <!-- The demo plugin jQuery.fixTableHeader -->
     <script src="jQuery.fixTableHeader.min.js"></script>
-    <script src="tooltip.js"></script>
+
+    <!-- simple-grid CSS from http://www.simplegrid.io/ -->
     <link rel="stylesheet" href="simple-grid.css" />
+
+    <!-- Bootstrap 3 tooltip files -->
+    <script src="tooltip.js"></script>
     <link rel="stylesheet" href="tooltip.css" />
+
+    <!-- Some custom styles I wrote :p -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Responsive viewport meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('#tableContainer').fixTableHeader();
+        })
 
-$(document).ready(function(){
-   $('[data-toggle="tooltip"]').tooltip();
-
-})
-
-    function toggleProfile()
-    {
-
-        if($('#profile').height() == 0)
-        {
-            $('#profile').height(285);
+        function toggleProfile() {
+            if ($('#profile').height() == 0) {
+                $('#profile').height(285);
+            }
+            else {
+                $('#profile').height(0);
+            }
         }
-        else
-        {
-            $('#profile').height(0);
-            
-        }
-
-    }
     </script>
 </head>
 
 <body>
     <div class="banner">
-        <h1>jQuery-fixTableHeader plugin</h1>
-        <p><em>A jQuery plugin to fix header or footer row in a table on user scroll</em></p>
+        <h1>jQuery-fixTableHeader</h1>
+        <p><em>A jQuery plugin to fix header or footer in a table</em></p>
         <div class="right"><a href="javascript:void(0);" onclick="toggleProfile();">@Jo-Geek</a></div>
     </div>
     <div class="profile center" id="profile">
         <img src="res/me.jpg" />
-        <h3>Jones Vinoth Joseph</h4>
-            <div class="small">Developer - .Net(C#|VB), HTML, CSS, jQuery</div>
-            <div class="clear-10"></div>
-            <div class="clear-10"></div>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https:jvjoseph.blogspot.com/" title="My Blog"><img src="res/blogger.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://stackoverflow.com/users/4084003/" title="Stack Overflow"><img src="res/stackoverflow.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://in.linkedin.com/in/jonesvinothjoseph" title="Linkedin"><img src="res/linkedin.ico" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://codepen.io/jo_Geek/" title="CodePen"><img src="res/codepen.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://github.com/Jo-Geek/" title="Github"><img src="res/github.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="mailto:jonesvinothjoseph@hotmail.com" title="Email"><img src="res/mail.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="tel:+917045477607" title="Phone"><img src="res/tel.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://facebook.com/jones.j.joe/" title="Facebook"><img src="res/fb.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://twitter.com/jodegeek" title="Twitter"><img src="res/twitter.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://plus.google.com/+JonesJosephjvj" title="Google plus"><img src="res/gplus.png" /></a>
+        <h3>Jones Vinoth Joseph</h3>
+
+        <div class="small">Developer - .Net(C#|VB), HTML, CSS, jQuery</div>
+        <div class="clear-10"></div>
+        <div class="clear-10"></div>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https:jvjoseph.blogspot.com/" title="My Blog">
+            <img src="res/blogger.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://stackoverflow.com/users/4084003/" title="Stack Overflow">
+            <img src="res/stackoverflow.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://in.linkedin.com/in/jonesvinothjoseph" title="Linkedin">
+            <img src="res/linkedin.ico" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://codepen.io/jo_Geek/" title="CodePen">
+            <img src="res/codepen.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://github.com/Jo-Geek/" title="Github">
+            <img src="res/github.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="mailto:jonesvinothjoseph@hotmail.com" title="Email">
+            <img src="res/mail.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="tel:+917045477607" title="Phone">
+            <img src="res/tel.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://facebook.com/jones.j.joe/" title="Facebook">
+            <img src="res/fb.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://twitter.com/jodegeek" title="Twitter">
+            <img src="res/twitter.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://plus.google.com/+JonesJosephjvj" title="Google plus">
+            <img src="res/gplus.png" /></a>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-2 side">
-                <a href="javascript:void(0)">Fixed header</a>
-                <a href="javascript:void(0)">Fixed footer</a>
-                <a href="javascript:void(0)">Header and footer</a>
-                <a href="javascript:void(0)">Multiple Header</a>
-                <a href="javascript:void(0)">Without <em>&lt;thead&gt;</em></a>
-                <!-- This content will take up 3/12 (or 1/4) of the container -->
+                <a class="tab-toggle" data-target="fixedHeader" href="javascript:void(0)">Fixed header</a>
+                <a class="tab-toggle" data-target="fixedFooter" href="javascript:void(0)">Fixed footer</a>
+                <a class="tab-toggle" data-target="headerFooter" href="javascript:void(0)">Header and footer</a>
+                <a class="tab-toggle" data-target="MultipleHeader" href="javascript:void(0)">Multiple Header</a>
+                <a class="tab-toggle" data-target="MultipleFooter" href="javascript:void(0)">Without <em>grouping</em></a>
             </div>
-            <div class="col-10">
+            <div class="col-10 side-right">
+
                 <div class="row">
                     <div class="col-6">
-                        <div class="container">
+                        <div id="fixedHeader-left">
+                            <h3>Fixed header<small> (This is the default mode, keeps header row fixed)</small></h3>
+                            <div class="clear-10"></div>
+                            Example on the right shows a demo of a single row fixed as header.
 
+                            <div class="clear-10"></div>
+                            <div class="code">
+
+                                <div class="header">
+                                    HTML
+                                </div>
+
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+
+                            </div>
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">CSS</div>
+                                <!-- HTML generated using hilite.me -->
+
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header, <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;  </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
+                                <div>}                                                                                                                                                                                      </div>
+                                <div></div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
+                                <div>: white;                                                                                                                                               </div>
+                                <div>
+                                    }</div>
+
+                             
+                                </div>
+
+                            <div class="clear-5"></div>
+                            <div class="code">
+                                <div class="header">jQuery</div>
+                                <div>$(<span style="color: #0000FF">&#39;#tableContainer&#39;</span>).fixTableHeader();</div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+
+                            <div id="fixedHeader-right" class="tab-panel active">
+                                <div id="tableContainer" class="container-tb">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th style="height: 15.0pt; width: 96pt">Subject</th>
+                                                <th style="width: 95pt">Sem1</th>
+                                                <th style="width: 96pt">Sem2</th>
+                                                <th style="width: 67pt">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <td>Total</td>
+                                                <td class="right">1243</td>
+                                                <td class="right">1143</td>
+                                                <td class="right">2386</td>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr>
+                                                <td>Physics-1</td>
+                                                <td class="right">67</td>
+                                                <td class="right">78</td>
+                                                <td class="right">145</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-2</td>
+                                                <td class="right">76</td>
+                                                <td class="right">56</td>
+                                                <td class="right">132</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-3</td>
+                                                <td class="right">56</td>
+                                                <td class="right">67</td>
+                                                <td class="right">123</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-4</td>
+                                                <td class="right">92</td>
+                                                <td class="right">34</td>
+                                                <td class="right">126</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-5</td>
+                                                <td class="right">76</td>
+                                                <td class="right">35</td>
+                                                <td class="right">111</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-6</td>
+                                                <td class="right">43</td>
+                                                <td class="right">65</td>
+                                                <td class="right">108</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-7</td>
+                                                <td class="right">43</td>
+                                                <td class="right">65</td>
+                                                <td class="right">108</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-8</td>
+                                                <td class="right">43</td>
+                                                <td class="right">65</td>
+                                                <td class="right">108</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physics-9</td>
+                                                <td class="right">43</td>
+                                                <td class="right">65</td>
+                                                <td class="right">108</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-1</td>
+                                                <td class="right">64</td>
+                                                <td class="right">47</td>
+                                                <td class="right">111</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-2</td>
+                                                <td class="right">98</td>
+                                                <td class="right">79</td>
+                                                <td class="right">177</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-3</td>
+                                                <td class="right">78</td>
+                                                <td class="right">67</td>
+                                                <td class="right">145</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-4</td>
+                                                <td class="right">67</td>
+                                                <td class="right">54</td>
+                                                <td class="right">121</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-5</td>
+                                                <td class="right">86</td>
+                                                <td class="right">98</td>
+                                                <td class="right">184</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-6</td>
+                                                <td class="right">79</td>
+                                                <td class="right">54</td>
+                                                <td class="right">133</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-7</td>
+                                                <td class="right">79</td>
+                                                <td class="right">54</td>
+                                                <td class="right">133</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-8</td>
+                                                <td class="right">79</td>
+                                                <td class="right">54</td>
+                                                <td class="right">133</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maths-9</td>
+                                                <td class="right">79</td>
+                                                <td class="right">54</td>
+                                                <td class="right">133</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-1</td>
+                                                <td class="right">65</td>
+                                                <td class="right">62</td>
+                                                <td class="right">127</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-2</td>
+                                                <td class="right">67</td>
+                                                <td class="right">86</td>
+                                                <td class="right">153</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-3</td>
+                                                <td class="right">59</td>
+                                                <td class="right">46</td>
+                                                <td class="right">105</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-4</td>
+                                                <td class="right">58</td>
+                                                <td class="right">85</td>
+                                                <td class="right">143</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-5</td>
+                                                <td class="right">74</td>
+                                                <td class="right">34</td>
+                                                <td class="right">108</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-6</td>
+                                                <td class="right">38</td>
+                                                <td class="right">96</td>
+                                                <td class="right">134</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-7</td>
+                                                <td class="right">38</td>
+                                                <td class="right">96</td>
+                                                <td class="right">134</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-8</td>
+                                                <td class="right">38</td>
+                                                <td class="right">96</td>
+                                                <td class="right">134</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Chemistry-9</td>
+                                                <td class="right">38</td>
+                                                <td class="right">96</td>
+                                                <td class="right">134</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                    </div>
                 </div>
-                <!-- This content will take up 3/12 (or 1/4) of the container -->
             </div>
         </div>
-    </div>
 </body>
 
 </html>
+
+
