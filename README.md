@@ -66,8 +66,9 @@ Examples: <br/>
 The plugin adds the classes `fth-header` and `fth-footer` to the `th`s and `td`s to all the detected headers and footers respectively.
 You can use this classes to manipulate thier appearance in your CSS.
 
-Example:
-```td.fth-header,th.fth_eader,td.fth-footer{
+Example:<br/>
+```
+td.fth-header,th.fth_eader,td.fth-footer{
       border-top:none;
       border-bottom:none;
    }
