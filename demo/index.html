@@ -2,59 +2,75 @@
 
 <head>
     <title>fixTableHeader Plugin</title>
+
+    <!-- jQuery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+    <!-- The demo plugin jQuery.fixTableHeader -->
     <script src="jQuery.fixTableHeader.min.js"></script>
-    <script src="tooltip.js"></script>
+
+    <!-- simple-grid CSS from http://www.simplegrid.io/ -->
     <link rel="stylesheet" href="simple-grid.css" />
+
+    <!-- Bootstrap 3 tooltip files -->
+    <script src="tooltip.js"></script>
     <link rel="stylesheet" href="tooltip.css" />
+
+    <!-- Some custom styles I wrote :p -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Responsive viewport meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
 
-$(document).ready(function(){
-   $('[data-toggle="tooltip"]').tooltip();
-
-})
-
-    function toggleProfile()
-    {
-
-        if($('#profile').height() == 0)
-        {
-            $('#profile').height(285);
+        function toggleProfile() {
+            if ($('#profile').height() == 0) {
+                $('#profile').height(285);
+            }
+            else {
+                $('#profile').height(0);
+            }
         }
-        else
-        {
-            $('#profile').height(0);
-            
-        }
-
-    }
     </script>
 </head>
 
 <body>
     <div class="banner">
-        <h1>jQuery-fixTableHeader plugin</h1>
-        <p><em>A jQuery plugin to fix header or footer row in a table on user scroll</em></p>
+        <h1>jQuery-fixTableHeader</h1>
+        <p><em>A jQuery plugin to fix header or footer in a table</em></p>
         <div class="right"><a href="javascript:void(0);" onclick="toggleProfile();">@Jo-Geek</a></div>
     </div>
     <div class="profile center" id="profile">
         <img src="res/me.jpg" />
-        <h3>Jones Vinoth Joseph</h4>
-            <div class="small">Developer - .Net(C#|VB), HTML, CSS, jQuery</div>
-            <div class="clear-10"></div>
-            <div class="clear-10"></div>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https:jvjoseph.blogspot.com/" title="My Blog"><img src="res/blogger.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://stackoverflow.com/users/4084003/" title="Stack Overflow"><img src="res/stackoverflow.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://in.linkedin.com/in/jonesvinothjoseph" title="Linkedin"><img src="res/linkedin.ico" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://codepen.io/jo_Geek/" title="CodePen"><img src="res/codepen.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://github.com/Jo-Geek/" title="Github"><img src="res/github.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="mailto:jonesvinothjoseph@hotmail.com" title="Email"><img src="res/mail.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="tel:+917045477607" title="Phone"><img src="res/tel.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://facebook.com/jones.j.joe/" title="Facebook"><img src="res/fb.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://twitter.com/jodegeek" title="Twitter"><img src="res/twitter.png" /></a>
-            <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://plus.google.com/+JonesJosephjvj" title="Google plus"><img src="res/gplus.png" /></a>
+        <h3>Jones Vinoth Joseph</h3>
+
+        <div class="small">Developer - .Net(C#|VB), HTML, CSS, jQuery</div>
+        <div class="clear-10"></div>
+        <div class="clear-10"></div>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https:jvjoseph.blogspot.com/" title="My Blog">
+            <img src="res/blogger.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://stackoverflow.com/users/4084003/" title="Stack Overflow">
+            <img src="res/stackoverflow.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://in.linkedin.com/in/jonesvinothjoseph" title="Linkedin">
+            <img src="res/linkedin.ico" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="http://codepen.io/jo_Geek/" title="CodePen">
+            <img src="res/codepen.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://github.com/Jo-Geek/" title="Github">
+            <img src="res/github.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="mailto:jonesvinothjoseph@hotmail.com" title="Email">
+            <img src="res/mail.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="tel:+917045477607" title="Phone">
+            <img src="res/tel.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://facebook.com/jones.j.joe/" title="Facebook">
+            <img src="res/fb.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://twitter.com/jodegeek" title="Twitter">
+            <img src="res/twitter.png" /></a>
+        <a target="_blank" data-toggle="tooltip" data-placement="bottom" href="https://plus.google.com/+JonesJosephjvj" title="Google plus">
+            <img src="res/gplus.png" /></a>
     </div>
     <div class="container">
         <div class="row">
@@ -63,20 +79,17 @@ $(document).ready(function(){
                 <a href="javascript:void(0)">Fixed footer</a>
                 <a href="javascript:void(0)">Header and footer</a>
                 <a href="javascript:void(0)">Multiple Header</a>
-                <a href="javascript:void(0)">Without <em>&lt;thead&gt;</em></a>
-                <!-- This content will take up 3/12 (or 1/4) of the container -->
+                <a href="javascript:void(0)">Without <em>grouping</em></a>
             </div>
             <div class="col-10">
                 <div class="row">
                     <div class="col-6">
                         <div class="container">
-
                         </div>
                     </div>
                     <div class="col-6">
                     </div>
                 </div>
-                <!-- This content will take up 3/12 (or 1/4) of the container -->
             </div>
         </div>
     </div>
