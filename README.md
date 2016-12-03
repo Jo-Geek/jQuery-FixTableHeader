@@ -5,7 +5,7 @@ This plugin does exactly what it says. Fixing the headings and/or the footers in
 
 [`Version 1.0`](#version-10) | [`Invoking the plugin`](#invoking-the-plugin) | [`Options`](#options) | [`Important`](#-important)
 
-View a demo **<a href='#'>here</a></h4>**.
+View a demo **<a href='https://jo-geek.github.io/jQuery-FixTableHeader/demo/'>here</a></h4>**.
 
 ## An ideal html table
 <table><tr><td width="50%"><font color="blue">
@@ -40,7 +40,8 @@ If not specified, it takes the <b>first row</b> and the <b>last row</b> as the h
 * fix header and/or footer with options
 * perfect table layout not needed, just works with few **tr** in iside a **table**
 * Supports fixing multiple rows in header/footer by using the **thead**/**tfoot** tag. Any number of rows within these tags will be fixed
-* tables with horizonal scrolling is supported
+* Tables with horizonal scrolling(responsiveness) is supported
+* Super light: just 2kb of code
 
 ##Invoking the plugin
 The table should be wrapped inside a container `div` with `overflow:auto` and a `fixed height` if necessary.<br/>
@@ -62,6 +63,15 @@ Examples: <br/>
 `$('#tbMarksContainer').fixTableHeader({fixHeader:true,fixFooter:true});`
 `$('#tbMarksContainer').fixTableHeader({fixHeader:false,fixFooter:true});`
 
+The plugin adds the classes `fth-header` and `fth-footer` to the `th`s and `td`s to all the detected headers and footers respectively.
+You can use this classes to manipulate thier appearance in your CSS.
+
+Example:
+```td.fth-header,th.fth_eader,td.fth-footer{
+      border-top:none;
+      border-bottom:none;
+   }
+```
 ##! Important
 - _A drawback:_ borders applied to the headers and footers wont be preserved while scrolling (researching, if this can be fixed).
 - It is recommended to avoid `border-top` and `border-bottom` on the `th` or `td` which is going to be the header or the footer.
