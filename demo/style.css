@@ -1,4 +1,6 @@
 * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -9,50 +11,78 @@ h1, h2, h3, h4, h5, h6 {
 .banner {
     width: 100%;
     background-color: #3D7083;
-    padding: 30px 30px 30px 30px;
+    padding: 15px 30px 30px 30px;
     border-bottom: 5px solid #66b8d6;
     color: white;
 }
 
-.banner:after {
-    content: '';
-    display: block;
-    height: 30px;
-    background-color: #4f90a8;
-    margin: -30px;
+    .banner:after {
+        content: '';
+        display: block;
+        height: 30px;
+        background-color: #4f90a8;
+        margin: -30px;
+    }
+
+    .banner h1 {
+        text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
+        color: rgba(0, 0, 0, 0.6);
+        margin: 10px 0px 5px 0px;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 3px 3px -2px rgba(255, 255, 255, 0.3);
+        -webkit-box-shadow: 0px 3px 3px -2px rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 3px 3px -2px rgba(255, 255, 255, 0.3);
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    .banner p {
+        text-align: right;
+        margin-top: 5px;
+        color: white;
+        text-shadow: none;
+    }
+
+    .banner div.right {
+        height: 30px;
+    }
+
+        .banner div.right > a {
+            text-decoration: none;
+            height: 100%;
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 3px;
+            cursor: pointer;
+            color: white;
+            /*border-bottom:3px solid transparent;*/
+            -moz-animation: blink 3s linear infinite;
+            -o-animation: blink 3s linear infinite;
+            -webkit-animation: blink 3s linear infinite;
+            animation: blink 3s linear infinite;
+        }
+
+@-moz-keyframes blink {
+    50% {
+        /*border-bottom:3px solid #3D7083;*/
+        background-color: #66b8d6;
+    }
 }
 
-.banner h1 {
-    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
-    color: rgba(0, 0, 0, 0.6);
-    margin: 10px 0px 5px 0px;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 3px 3px -2px rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
+@-ms-keyframes blink {
+    50% {
+        /*border-bottom:3px solid #3D7083;*/
+        background-color: #66b8d6;
+    }
 }
 
-.banner p {
-    text-align: right;
-    margin-top: 5px;
-    color: white;
-    text-shadow: none;
-}
-
-.banner div.right {
-    height: 30px;
-}
-
-.banner div.right > a {
-    text-decoration: none;
-    height: 100%;
-    display: inline-block;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 3px;
-    cursor: poiner;
-    color: white;
-    /*border-bottom:3px solid transparent;*/
-    animation: blink 3s linear infinite;
+@-webkit-keyframes blink {
+    50% {
+        /*border-bottom:3px solid #3D7083;*/
+        background-color: #66b8d6;
+    }
 }
 
 @keyframes blink {
@@ -66,33 +96,45 @@ h1, h2, h3, h4, h5, h6 {
     outline: none;
     background-color: #66b8d6;
     text-decoration: none;
-    cursor: poiner;
+    cursor: pointer;
 }
 
 .profile {
     background-color: #66b8d6;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
     box-sizing: content-box;
     height: 0px;
     padding: 0px 30px 0px 30px;
     overflow: hidden;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     color: white;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    float: right;
+    z-index: 1;
 }
 
-.profile img {
-    margin-bottom: 15px;
-}
+    .profile img {
+        margin-bottom: 15px;
+    }
 
-.profile a > img {
-    height: 32px;
-    width: 32px;
-    border-radius: 4px;
-    border: 1px solid #fff;
-}
+    .profile a > img {
+        height: 32px;
+        width: 32px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #fff;
+    }
 
-.profile a {
-    margin-right: 4px;
-}
+    .profile a {
+        margin-right: 4px;
+    }
 
 .small {
     font-size: 12px;
@@ -115,19 +157,132 @@ h1, h2, h3, h4, h5, h6 {
     color: #444;
 }
 
-.side a:hover {
-    text-decoration: none;
-    background: #66b8d6;
+    .side a:hover {
+        text-decoration: none;
+        background: #66b8d6;
+        color: white;
+    }
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: auto;
+    min-width: 100%;
+}
+
+td, th {
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+
+thead td, thead th {
+    border-top: none;
+    border-bottom: none;
+}
+
+.container-tb {
+    height: 400px;
+    width: 100%;
+    overflow: auto;
+    border: 2px solid #999;
+}
+
+td.fth-header, th.fth-header, td.fth-footer, th.fth-footer {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+td.fth-header, th.fth-header {
+    background-color: #3D7083;
     color: white;
 }
+
+td.fth-footer, th.fth-footer {
+    background-color: #4F90A8;
+    color: white;
+}
+
+.tab-panel {
+    position: absolute;
+    height: 0px;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+    .tab-panel.active {
+        height: 100%;
+    }
+
+.side-right, .side-right table {
+    font-size: 14px;
+}
+
+    .side-right h1, .side-right h2, .side-right h3, .side-right h4, .side-right h5, .side-right h6 {
+        margin-top: 0px;
+    }
+
+h1 > small, h2 > small, h3 > small, h4 > small, h5 > small, h6 > small {
+    border-top: 1px solid #ccc;
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 10pt;
+}
+
+
+.code {
+    /*background-color:#fbffe8;*/
+    padding: 20px 15px 10px 15px;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow: auto;
+    white-space: nowrap;
+    font-family: Consolas;
+}
+
+    .code > .header {
+        position: absolute;
+        margin-top: -20px;
+        margin-left: -15px;
+        display: inline-block;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: "lato";
+        background-color: #78C1DD;
+        color: white;
+    }
+
+        .code > .header:after {
+            content: '';
+            display: inline-block;
+            width: 0px;
+            background-color: transparent;
+            border: 10px solid transparent;
+            border-left: 10px solid #78C1DD;
+            border-top: 10px solid #78C1DD;
+            right: -20px;
+            position: absolute;
+        }
+
+
+    .code > .new-line {
+        display: block;
+    }
 
 @media only screen and (max-width: 34em) {
     .banner h1 {
         font-size: 25px;
     }
+
     .banner p {
         font-size: 14px;
     }
+
     .side {
         border: none;
         border-bottom: 1px solid #ddd;
