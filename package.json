@@ -1,6 +1,6 @@
  {
      "name": "fix-table-header",
-     "version": "1.0.0",
+     "version": "1.0.1",
      "title": "jQuery - Fix Header or Footer in a Table",
      "description": "A jQuery plugin to fix header or footer row in a table on scroll",
      "main": "jQuery.fixTableHeader.js",
@@ -22,7 +22,7 @@
          "type": "MIT",
          "url": "https://opensource.org/licenses/MIT"
      }],
-     "license":"MIT", 
+     "license": "MIT",
      "keywords": [
          "jquery-plugin",
          "ecosystem:jquery",
