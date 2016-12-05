@@ -1,19 +1,36 @@
-{
-  "name": "fix-table-header",
-  "version": "1.0",
-  "description": "A jQuery plugin to fix header or footer row in a table on user scroll",
-  "main": "jQuery.fixTableHeader.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Jo-Geek/jQuery-FixTableHeader"
-  },
-  "author": "Jones Vinoth Joseph <jonesvinothjoseph@hotmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Jo-Geek/jQuery-FixTableHeader/issues"
-  },
-  "homepage": "https://github.com/Jo-Geek/jQuery-FixTableHeader"
-}
+ {
+     "name": "fixTableHeader",
+     "version": "1.0",
+     "title": "jQuery - Fix Header or Footer in a Table",
+     "description": "A jQuery plugin to fix header or footer row in a table on scroll",
+     "main": "jQuery.fixTableHeader.js",
+     "repository": {
+         "type": "git",
+         "url": "https://github.com/Jo-Geek/jQuery-FixTableHeader"
+     },
+     "author": [{
+         "name": "Jones Vinoth Joseph",
+         "email": "jonesvinothjoseph@hotmail.com",
+         "url": "https://jvjoseph.blogspot.in/"
+     }],
+     "homepage": "https://github.com/Jo-Geek/jQuery-FixTableHeader/",
+     "licenses": [{
+         "type": "MIT",
+         "url": "https://opensource.org/licenses/MIT"
+     }],
+     "keywords": [
+         "jquery",
+         "table",
+         "header",
+         "footer",
+         "fixed",
+         "thfix",
+         "scroll",
+         "thead",
+         "tfoot"
+     ],
+     "bugs": {
+         "url": "https://github.com/Jo-Geek/jQuery-FixTableHeader/issues"
+     },
+     "demo": "https://jo-geek.github.io/jQuery-FixTableHeader/demo/"
+ }
