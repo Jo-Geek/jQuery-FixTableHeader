@@ -1,6 +1,6 @@
  {
      "name": "fixTableHeader",
-     "version": "1.0",
+     "version": "1.0.0",
      "title": "jQuery - Fix Header or Footer in a Table",
      "description": "A jQuery plugin to fix header or footer row in a table on scroll",
      "main": "jQuery.fixTableHeader.js",
