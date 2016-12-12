@@ -48,6 +48,7 @@
     }
 
     var containerHeight = 0;
+    console.log(hasScrollbar(container));
     if (hasScrollbar(container)) {
       containerHeight = container.height() - getScrollBarSize();
     }
@@ -91,6 +92,7 @@
   function hasScrollbar(node) {
     var el = document.getElementById($(node).attr('id'));
     var overflowX = window.getComputedStyle(el)['overflow-x'];
+    console.log({overflowX:overflowX,elScrollwidth: el.scrollWidth , elClientWidth:el.clientWidth});
     return (overflowX === 'scroll' || overflowX === 'auto') && el.scrollWidth > el.clientWidth;
   }
 }(jQuery));
