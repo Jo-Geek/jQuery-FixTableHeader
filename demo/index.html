@@ -1,4 +1,5 @@
 <html>
+
 <head>
 
     <!-- HTML for code syntax highliting generated using hilite.me - http://hilite.me/ -->
@@ -26,18 +27,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
             $('#tableContainer').fixTableHeader();
-            $('#tableContainer1').fixTableHeader({ fixHeader: false, fixFooter: true });
-            $('#tableContainer4').fixTableHeader({ fixHeader: true, fixFooter: true });
-            $('#tableContainer2').fixTableHeader({ fixHeader: true, fixFooter: true });
-            $('#tableContainer5').fixTableHeader({ fixHeader: true, fixFooter: true });
+            $('#tableContainer1').fixTableHeader({
+                fixHeader: false,
+                fixFooter: true
+            });
+            $('#tableContainer4').fixTableHeader({
+                fixHeader: true,
+                fixFooter: true
+            });
+            $('#tableContainer2').fixTableHeader({
+                fixHeader: true,
+                fixFooter: true
+            });
+            $('#tableContainer5').fixTableHeader({
+                fixHeader: true,
+                fixFooter: true
+            });
             $('#tableContainer3').fixTableHeader();
-            $('#tableContainer6').fixTableHeader();
+            $('#tableContainer6').fixTableHeader({
+                fixHeader: true,
+                fixFooter: true
+            });
 
-            $('.tab-toggle').click(function () {
-                $('.section').each(function () {
+            $('.tab-toggle').click(function() {
+                $('.section').each(function() {
                     $(this).addClass(" hidden");
                 })
 
@@ -49,8 +65,7 @@
         function toggleProfile() {
             if ($('#profile').height() == 0) {
                 $('#profile').height(285);
-            }
-            else {
+            } else {
                 $('#profile').height(0);
             }
         }
@@ -59,7 +74,7 @@
 
 <body>
     <div class="banner">
-        <a  href="https://github.com/Jo-Geek/jQuery-FixTableHeader" target="_blank" class="github" data-toggle="tooltip" data-placement="left" title="Project on Github"><img src="res/github.png" /></a>
+        <a href="https://github.com/Jo-Geek/jQuery-FixTableHeader" target="_blank" class="github" data-toggle="tooltip" data-placement="left" title="Project on Github"><img src="res/github.png" /></a>
         <h1>jQuery-fixTableHeader</h1>
         <p><em>A jQuery plugin to fix header or footer in a table</em></p>
         <div class="bottom">Start scrolling for effect..!<a href="javascript:void(0);" onclick="toggleProfile();">@Jo-Geek</a></div>
@@ -131,44 +146,45 @@
                                     HTML
                                 </div>
 
-                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
-                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span> </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span> </div>
 
                             </div>
                             <div class="clear-5"></div>
                             <div class="code">
                                 <div class="header">CSS</div>
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header, </div><div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
-                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header, </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
-                                <div>: white;                                                                                                                                               </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span> </div>
+                                <div>: white; </div>
                                 <div>
                                     }
                                 </div>
@@ -198,44 +214,45 @@
                                     HTML
                                 </div>
 
-                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
-                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span> </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span> </div>
 
                             </div>
                             <div class="clear-5"></div>
                             <div class="code min">
                                 <div class="header">CSS</div>
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
-                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div>
+                                <div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
-                                <div>: white;                                                                                                                                               </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span> </div>
+                                <div>: white; </div>
                                 <div>
                                     }
                                 </div>
@@ -266,44 +283,45 @@
                                     HTML
                                 </div>
 
-                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
-                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span> </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span> </div>
 
                             </div>
                             <div class="clear-5"></div>
                             <div class="code min">
                                 <div class="header">CSS</div>
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
-                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div>
+                                <div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
-                                <div>: white;                                                                                                                                               </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span> </div>
+                                <div>: white; </div>
                                 <div>
                                     }
                                 </div>
@@ -324,8 +342,7 @@
                         <div id="left-multipleHeader" class="hidden section ">
                             <h3>Multiple headers<small> (Define more than a row as fixed headers)</small></h3>
                             <div class="clear-10"></div>
-                            Example on the right shows a demo of multiple headers fixed.<br />
-                            Note: <b>All the rows as header should be inside <em><code>thead</code></em> tag</b>
+                            Example on the right shows a demo of multiple headers fixed.<br /> Note: <b>All the rows as header should be inside <em><code>thead</code></em> tag</b>
 
                             <div class="clear-10"></div>
                             <div class="code min">
@@ -334,48 +351,49 @@
                                     HTML
                                 </div>
 
-                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
 
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
-                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span> </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span> </div>
 
                             </div>
                             <div class="clear-5"></div>
                             <div class="code min">
                                 <div class="header">CSS</div>
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
-                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div>
+                                <div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
-                                <div>: white;                                                                                                                                               </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span> </div>
+                                <div>: white; </div>
                                 <div>
                                     }
                                 </div>
@@ -395,8 +413,7 @@
                         <div id="left-multipleFooter" class="hidden section ">
                             <h3>Multiple footers<small> (Define more than a row as fixed footers)</small></h3>
                             <div class="clear-10"></div>
-                            Example on the right shows a demo of multiple footers fixed.<br />
-                            Note: <b>All rows as footer should be inside <em><code>tfoot</code></em> tag</b>
+                            Example on the right shows a demo of multiple footers fixed.<br /> Note: <b>All rows as footer should be inside <em><code>tfoot</code></em> tag</b>
 
                             <div class="clear-10"></div>
                             <div class="code min">
@@ -405,48 +422,49 @@
                                     HTML
                                 </div>
 
-                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span>                                                                       </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span>                                                                        </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;thead&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/thead&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tbody&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tbody&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tfoot&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
 
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span>                                                                       </div>
-                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tfoot&gt;</span> </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span> </div>
 
                             </div>
                             <div class="clear-5"></div>
                             <div class="code min">
                                 <div class="header">CSS</div>
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
-                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div>
+                                <div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
-                                <div>: white;                                                                                                                                               </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span> </div>
+                                <div>: white; </div>
                                 <div>
                                     }
                                 </div>
@@ -475,41 +493,42 @@
                                     HTML
                                 </div>
 
-                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span> </div>
 
                             </div>
                             <div class="clear-5"></div>
                             <div class="code min">
                                 <div class="header">CSS</div>
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
-                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div>
+                                <div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
-                                <div>: white;                                                                                                                                               </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span> </div>
+                                <div>: white; </div>
                                 <div>
                                     }
                                 </div>
@@ -538,41 +557,42 @@
                                     HTML
                                 </div>
 
-                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span>                                                                        </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span>                                                                           </div>
-                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span>      </div>
-                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span>                                                                          </div>
-                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span>                                                                       </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;table&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;th&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/th&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;tr&gt;</span> </div>
+                                <div>&emsp;&emsp;<span style="color: #000080; font-weight: bold">&lt;td&gt;</span>...<span style="color: #000080; font-weight: bold">&lt;/td&gt;</span> </div>
+                                <div>&emsp;<span style="color: #000080; font-weight: bold">&lt;/tr&gt;</span> </div>
+                                <div><span style="color: #000080; font-weight: bold">&lt;/table&gt;</span> </div>
 
                             </div>
                             <div class="clear-5"></div>
                             <div class="code min">
                                 <div class="header">CSS</div>
 
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div><div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
-                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>;     </div>
-                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd;  </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header,</div>
+                                <div> <span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {</div>
+                                <div><span style="color: #000080; font-weight: bold">border-top</span>: <span style="color: #000080; font-weight: bold">none</span> <span style="color: #008080">!important</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">border-bottom</span>: 1px solid #ddd; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>: white;                                                                                                               </div>
-                                <div>}                                                                                                                                                                                      </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-header, <span style="color: #000080; font-weight: bold">th</span>.fth-header { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#3D7083</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span>: white; </div>
+                                <div>} </div>
                                 <div></div>
-                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer {       </div>
-                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>;                                                              </div>
-                                <div><span style="color: #000080; font-weight: bold">color</span>                                                                                                                       </div>
-                                <div>: white;                                                                                                                                               </div>
+                                <div><span style="color: #000080; font-weight: bold">td</span>.fth-footer, <span style="color: #000080; font-weight: bold">th</span>.fth-footer { </div>
+                                <div><span style="color: #000080; font-weight: bold">background-color</span>: <span style="color: #0000FF">#4F90A8</span>; </div>
+                                <div><span style="color: #000080; font-weight: bold">color</span> </div>
+                                <div>: white; </div>
                                 <div>
                                     }
                                 </div>
@@ -2513,5 +2533,3 @@
 </body>
 
 </html>
-
-
