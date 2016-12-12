@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 
     <!-- The demo plugin jQuery.fixTableHeader -->
-    <script src="../jQuery.fixTableHeader.js"></script>
+    <script src="jQuery.fixTableHeader.min.js"></script>
 
     <!-- simple-grid CSS from http://www.simplegrid.io/ -->
     <link rel="stylesheet" href="simple-grid.css" />
@@ -30,27 +30,7 @@
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
             $('#tableContainer').fixTableHeader();
-            $('#tableContainer1').fixTableHeader({
-                fixHeader: false,
-                fixFooter: true
-            });
-            $('#tableContainer4').fixTableHeader({
-                fixHeader: true,
-                fixFooter: true
-            });
-            $('#tableContainer2').fixTableHeader({
-                fixHeader: true,
-                fixFooter: true
-            });
-            $('#tableContainer5').fixTableHeader({
-                fixHeader: true,
-                fixFooter: true
-            });
-            $('#tableContainer3').fixTableHeader();
-            $('#tableContainer6').fixTableHeader({
-                fixHeader: true,
-                fixFooter: true
-            });
+
 
             $('.tab-toggle').click(function() {
                 $('.section').each(function() {
@@ -59,6 +39,28 @@
 
                 $('#left-' + $(this).attr('data-target') + '').removeClass("hidden");
                 $('#right-' + $(this).attr('data-target') + '').removeClass("hidden");
+
+                $('#tableContainer1').fixTableHeader({
+                    fixHeader: false,
+                    fixFooter: true
+                });
+                $('#tableContainer4').fixTableHeader({
+                    fixHeader: true,
+                    fixFooter: true
+                });
+                $('#tableContainer2').fixTableHeader({
+                    fixHeader: true,
+                    fixFooter: true
+                });
+                $('#tableContainer5').fixTableHeader({
+                    fixHeader: true,
+                    fixFooter: true
+                });
+                $('#tableContainer3').fixTableHeader();
+                $('#tableContainer6').fixTableHeader({
+                    fixHeader: true,
+                    fixFooter: true
+                });
             })
         })
 
