@@ -3,6 +3,8 @@ _A jQuery plugin to fix header or footer row in a table on user scroll_
 
 This plugin does exactly what it says. Fixing the headings and/or the footers in a HTML table is made easy by this plugin
 
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://jo-geek.github.io/jQuery-FixTableHeader/license.txt)
+
 [`Version 1.0`](#version-10) | [`Invoking the plugin`](#invoking-the-plugin) | [`Options`](#options) | [`Important`](#-important)
 
 View a demo **<a href='https://jo-geek.github.io/jQuery-FixTableHeader/demo/'>here</a></h4>**.
