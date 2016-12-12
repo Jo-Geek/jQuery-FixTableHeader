@@ -1,6 +1,5 @@
-(function ($) {
-    $.fn.fixTableHeader = function (options) {
-
+(function($) {
+    $.fn.fixTableHeader = function(options) {
         var settings = $.extend({
             fixHeader: true,
             fixFooter: false
@@ -14,69 +13,59 @@
         if (this.find('table').has('thead').length) {
             if (this.find('table thead').has('th').length) {
                 xHeaders = this.find("table thead th");
-            }
-            else {
+            } else {
                 xHeaders = this.find("table thead td");
             }
-        }
-        else if (this.find('table').has('tbody').length) {
+        } else if (this.find('table').has('tbody').length) {
 
             if (this.find('table tbody').has('th').length) {
                 xHeaders = this.find("table tbody th");
-            }
-            else {
+            } else {
                 xHeaders = this.find("table tbody > tr:first-child td");
             }
-        }
-        else if (this.find('table').has('th').length) {
+        } else if (this.find('table').has('th').length) {
             xHeaders = this.find("table th");
-        }
-        else {
+        } else {
             xHeaders = this.find("table > tr:first-child td");
         }
 
         if (this.find('table').has('tfoot').length) {
             xFooters = this.find("table tfoot td");
-        }
-        else {
+        } else {
             if (this.find('table').has('tbody').length) {
                 xFooters = this.find("table tbody > tr:last-child td");
-            }
-            else {
+            } else {
                 xFooters = this.find("table > tr:last-child td");
             }
         }
 
-        var swidth = (container.innerHeight() - $(container).height());
         var containerHeight = 0;
-        if (container.innerWidth() < table.width()) {
+        if (hasScrollbar(container)) {
             containerHeight = container.height() - getScrollBarSize();
-        }
-        else {
+        } else {
             containerHeight = container.height();
         }
 
-        xHeaders.each(function () {
+        xHeaders.each(function() {
             $(this).addClass(' fth-header');
         });
 
-        xFooters.each(function () {
+        xFooters.each(function() {
             $(this).addClass(' fth-footer');
         })
 
-        this.scroll(function () {
+        this.scroll(function() {
             if (settings.fixHeader) {
-                xHeaders.each(function () {
+                xHeaders.each(function() {
                     $(this).css('position', 'relative');
                     $(this).css('top', container.scrollTop() + 'px');
                 });
             }
 
             if (settings.fixFooter) {
-                xFooters.each(function () {
+                xFooters.each(function() {
                     $(this).css('position', 'relative');
                     $(this).css('top', ((containerHeight - table.height() + container.scrollTop())) + 'px');
-
                 })
             }
         })
@@ -88,4 +77,10 @@
         $outer.remove();
         return 100 - widthWithScroll;
     };
+
+    function hasScrollbar(node) {
+        var el = document.getElementById($(node).attr('id'));
+        var overflowX = window.getComputedStyle(el)['overflow-x'];
+        return (overflowX === 'scroll' || overflowX === 'auto') && el.scrollWidth > el.clientWidth;
+    }
 }(jQuery));
