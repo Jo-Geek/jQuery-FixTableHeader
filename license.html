@@ -5,6 +5,10 @@
         MIT License
     </title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         html {
             background-color: white;
         }
@@ -22,6 +26,7 @@
             max-width: 1050px;
             box-shadow: 0px 0px 24px 6px rgba(0, 0, 0, 0.3);
             background-color: rgb(240, 240, 240);
+            height: 100%;
         }
         
         h1 {
@@ -67,6 +72,7 @@
             position: relative;
             left: 50px;
             top: -9px;
+            cursor: pointer;
         }
         
         span.package-name:before {
@@ -92,6 +98,9 @@
         }
         
         @media only screen and (max-width: 650px) {
+            body {
+                width: 98%;
+            }
             span.package-name {
                 background-color: RGBa(0, 122, 204, 0.7);
                 color: #fefefe;
@@ -113,7 +122,18 @@
                 display: none;
             }
         }
+        
+        @media only screen and (max-width: 700px) {
+            body {
+                width: 95%;
+            }
+        }
     </style>
+    <script>
+        function gotoDemo() {
+            window.location.href = "demo/index.html";
+        }
+    </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -124,7 +144,7 @@
         MIT License
 
     </h1>
-    <span class="copyright">Copyright (c) 2016 Jones Vinoth Joseph</span><span class="package-name">jQuery-fixTableHeader</span>
+    <span class="copyright">Copyright (c) 2016 Jones Vinoth Joseph</span><span class="package-name" onclick="gotoDemo()">jQuery-fixTableHeader</span>
     <div>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify,
         merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included
         in all copies or substantial portions of the Software.
