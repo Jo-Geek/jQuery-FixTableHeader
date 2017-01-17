@@ -1,0 +1,2 @@
+https://jo-geek.github.io/jQuery-FixTableHeader/license.html
+https://jo-geek.github.io/jQuery-FixTableHeader/demo/

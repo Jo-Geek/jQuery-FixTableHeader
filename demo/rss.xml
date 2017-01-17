@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<rss version="2.0">
+  <channel>
+    <title>jQuery-fixTableHeader : A jQuery plugin to fix table header and/or footer</title>
+    <link>https://jo-geek.github.io/jQuery-FixTableHeader/demo/</link>
+    <description />
+    <item>
+      <guid>https://jo-geek.github.io/jQuery-FixTableHeader/license.html</guid>
+      <title>
+        MIT License
+    </title>
+      <link>https://jo-geek.github.io/jQuery-FixTableHeader/license.html</link>
+      <description />
+    </item>
+    <item>
+      <guid>https://jo-geek.github.io/jQuery-FixTableHeader/demo/</guid>
+      <title>jQuery-fixTableHeader : A jQuery plugin to fix table header and/or footer</title>
+      <link>https://jo-geek.github.io/jQuery-FixTableHeader/demo/</link>
+      <description>A jQuery plugin to fix table header and/or footer on scroll. Also supports multiple headers and footers</description>
+    </item>
+  </channel>
+</rss>
+<!--<guid value="" />-->
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
