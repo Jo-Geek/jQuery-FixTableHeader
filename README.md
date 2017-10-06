@@ -7,8 +7,8 @@ This plugin does exactly what it says. Fixing the headings and/or the footers in
 
 View a demo **<a href='https://jo-geek.github.io/jQuery-FixTableHeader/demo/'>here</a></h4>**.
 
->###NPM
->`npm i fix-table-header`
+> ###NPM
+> `npm i fix-table-header`
 
 ##Version 1.0
 #### jQuery.fixTableHeader.js
