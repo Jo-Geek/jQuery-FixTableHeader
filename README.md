@@ -7,10 +7,10 @@ This plugin does exactly what it says. Fixing the headings and/or the footers in
 
 View a demo **<a href='https://jo-geek.github.io/jQuery-FixTableHeader/demo/'>here</a></h4>**.
 
-> ###NPM
+> ### NPM
 > `npm i fix-table-header`
 
-##Version 1.0
+## Version 1.0
 #### jQuery.fixTableHeader.js
 * fix header and/or footer with options
 * no alterations to existing table needed, just wrap it around a container and call this plugin.
@@ -25,7 +25,7 @@ View a demo **<a href='https://jo-geek.github.io/jQuery-FixTableHeader/demo/'>he
 * fixed the position of footer when the container has a horizontal scrollbar
 
 
-##Invoking the plugin
+## Invoking the plugin
 The table should be wrapped inside a container `div` with `overflow:auto` and a `fixed height` if necessary.<br/>
 Eg table:<br/>
 ```
@@ -37,7 +37,7 @@ Eg table:<br/>
 ```
 - invoke using the container div's ID - `$('#tbMarksContainer').fixTableHeader();`
 
-##Options
+## Options
 - fixHeader : **true/false** _(default -> true)_ [fix or not to fix the header]
 - fixFooter : **true/false** _(default -> false)_ [fix or not to fix the footer]
 
@@ -55,7 +55,7 @@ td.fth-header,th.fth_eader,td.fth-footer{
       border-bottom:none;
    }
 ```
-##! Important
+## ! Important
 - _A drawback:_ borders applied to the headers and footers wont be preserved while scrolling (researching, if this can be fixed).
 - It is recommended to avoid `border-top` and `border-bottom` on the `th` or `td` which is going to be the header or the footer.
 - It is important to keep a solid color or an image as background to the headers and footers to avoid any transparency while scrolling.
